@@ -2,10 +2,10 @@ from flask import Flask, render_template, request
 import pandas as pd
 import pickle
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates', static_folder='static')
 
 # Load the trained model
-with open('model.pkl', 'rb') as file:
+with open("modelobject.pkl", 'rb') as file:
     model = pickle.load(file)
 
 # Define a default threshold value
@@ -15,7 +15,6 @@ threshold = 0.5
 def home():
     return render_template('index.html')
 
-@app.route('/predict', methods=['POST'])
 @app.route('/predict', methods=['POST'])
 def predict():
     # Load user input

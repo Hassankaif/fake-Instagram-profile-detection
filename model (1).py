@@ -9,7 +9,7 @@ from sklearn.impute import SimpleImputer
 import pickle
 
 # Load dataset
-dataset = pd.read_csv("myds.csv") 
+dataset = pd.read_csv(r"C:\Users\hassa\OneDrive\Desktop\project\FAKE PROFILE ML P1\fake-Instagram-profile-detection\myds.csv") 
 
 # Separate features and labels
 features = dataset[['edge_followed_by', 'edge_follow', 'username_length',
@@ -51,5 +51,5 @@ voting_classifier_hard = VotingClassifier(estimators=[
 voting_classifier_hard.fit(X_train_scaled, y_train)
 
 # Save the trained model using pickle
-with open('model.pkl', 'wb') as file:
+with open('modelobject.pkl', 'wb') as file:
     pickle.dump(voting_classifier_hard, file)

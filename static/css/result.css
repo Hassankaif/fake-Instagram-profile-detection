@@ -3,7 +3,7 @@ body {
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
-    background-image: url('pic28.jpg');
+    background-image: url('../images/pic28.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }
